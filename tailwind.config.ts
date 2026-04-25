@@ -13,7 +13,16 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
       colors: {
+        warmWhite: "hsl(var(--warm-white))",
+        sand: "hsl(var(--sand))",
+        taupe: "hsl(var(--taupe))",
+        charcoal: "hsl(var(--charcoal))",
+        ink: "hsl(var(--ink))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
