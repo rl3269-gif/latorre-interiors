@@ -1,6 +1,5 @@
 import { useReveal } from "@/hooks/use-reveal";
 
-import plazaPool from "@/assets/project-plaza-pool.jpg";
 import plazaLiving from "@/assets/project-plaza-living.jpg";
 import plazaKitchen from "@/assets/project-plaza-kitchen-2.jpg";
 import plazaExterior from "@/assets/project-plaza-exterior.jpg";
@@ -33,7 +32,7 @@ const featured: Featured[] = [
     category: "Contemporary Villa · Architecture & Interiors",
     concept:
       "Conceived as a single horizontal gesture, the residence opens entirely toward the garden through a measured rhythm of glass and white volumes. Inside, oak millwork, travertine and warm linen are layered to soften the architecture — a calm, sunlit home shaped around an entertaining family that lives between the pool, the kitchen and the open living room.",
-    images: [plazaPool, plazaLiving, plazaKitchen, plazaExterior],
+    images: [rrgLiving, plazaLiving, plazaKitchen, plazaExterior],
   },
   {
     index: "Featured 02",
