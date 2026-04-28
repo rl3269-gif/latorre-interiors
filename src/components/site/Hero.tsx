@@ -12,7 +12,7 @@ const Hero = () => {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-ink/10 to-ink/55" />
 
-      <div className="relative z-10 h-full container-editorial flex flex-col justify-end pb-16 md:pb-24 text-warmWhite">
+      <div className="relative z-10 h-full container-editorial flex flex-col justify-end pb-16 md:pb-24 text-accent">
         <div className="max-w-4xl">
           <p className="eyebrow text-warmWhite/80 mb-6">Latorre Interiors LLC · United States</p>
           <h1 className="display-serif text-[44px] sm:text-6xl md:text-7xl lg:text-[88px] text-warmWhite">

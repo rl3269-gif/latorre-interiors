@@ -27,9 +27,9 @@ const Header = () => {
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="container-editorial flex items-center justify-between h-16 md:h-20">
+      <div className="container-editorial flex items-center justify-between h-16 md:h-20 text-secondary">
         <a href="#top" className="flex items-baseline gap-2">
-          <span className="font-serif text-lg md:text-xl tracking-[0.18em] uppercase">
+          <span className="font-serif text-lg md:text-xl tracking-[0.18em] uppercase text-secondary">
             Latorre
           </span>
           <span className="hidden sm:inline text-[10px] tracking-[0.32em] uppercase text-muted-foreground">
