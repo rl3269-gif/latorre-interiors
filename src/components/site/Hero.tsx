@@ -2,7 +2,7 @@ import heroImage from "@/assets/project-plaza-living.jpg";
 
 const Hero = () => {
   return (
-    <section id="top" className="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-ink">
+    <section id="top" className="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-background">
       <img
         src={heroImage}
         alt="Latorre Interiors signature residence — double-height living room with crystal chandelier and travertine wall"
