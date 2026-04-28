@@ -5,8 +5,8 @@ const Hero = () => {
     <section id="top" className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
       <img
         src={heroImage}
-        alt="Latorre Interiors signature residence — modern architecture with pool and floor-to-ceiling glass"
-        className="absolute inset-0 h-full w-full object-cover scale-[1.02]"
+        alt="Latorre Interiors signature residence — double-height living room with crystal chandelier and travertine wall"
+        className="absolute inset-0 h-full w-full object-cover object-[center_30%] scale-[1.02]"
         loading="eager"
         fetchPriority="high"
       />
