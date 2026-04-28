@@ -32,7 +32,7 @@ const featured: Featured[] = [
     category: "Contemporary Villa · Architecture & Interiors",
     concept:
       "Conceived as a single horizontal gesture, the residence opens entirely toward the garden through a measured rhythm of glass and white volumes. Inside, oak millwork, travertine and warm linen are layered to soften the architecture — a calm, sunlit home shaped around an entertaining family that lives between the pool, the kitchen and the open living room.",
-    images: [rrgLiving, plazaLiving, plazaKitchen, plazaExterior],
+    images: [plazaLiving, rrgLiving, plazaKitchen, plazaExterior],
   },
   {
     index: "Featured 02",
