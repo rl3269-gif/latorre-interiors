@@ -1,19 +1,93 @@
 import { useReveal } from "@/hooks/use-reveal";
 import { useState } from "react";
 import { toast } from "sonner";
+import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
+
+const inquirySchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100),
+  email: z.string().trim().email("Invalid email").max(255),
+  phone: z.string().trim().max(50).optional().or(z.literal("")),
+  city: z.string().trim().min(1, "Project location is required").max(150),
+  type: z.string().trim().min(1, "Project type is required").max(100),
+  budget: z.string().trim().min(1, "Investment range is required").max(100),
+  timeline: z.string().trim().max(100).optional().or(z.literal("")),
+  referral: z.string().trim().max(150).optional().or(z.literal("")),
+  message: z.string().trim().max(2000).optional().or(z.literal("")),
+});
 
 const Inquiry = () => {
   const ref = useReveal<HTMLDivElement>();
   const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const fd = new FormData(form);
+    const raw = Object.fromEntries(fd.entries()) as Record<string, string>;
+
+    const parsed = inquirySchema.safeParse(raw);
+    if (!parsed.success) {
+      toast.error(parsed.error.issues[0]?.message ?? "Please review the form.");
+      return;
+    }
+    const data = parsed.data;
+
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      (e.target as HTMLFormElement).reset();
+    try {
+      const id = crypto.randomUUID();
+      const { error: insertError } = await supabase.from("inquiries").insert({
+        id,
+        name: data.name,
+        email: data.email,
+        phone: data.phone || null,
+        city: data.city || null,
+        project_type: data.type || null,
+        budget: data.budget || null,
+        timeline: data.timeline || null,
+        referral: data.referral || null,
+        message: data.message || null,
+      });
+      if (insertError) throw insertError;
+
+      // Notify the studio
+      await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "inquiry-notification",
+          recipientEmail: "studio@latorreinteriors.com",
+          idempotencyKey: `inquiry-notify-${id}`,
+          templateData: {
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            city: data.city,
+            projectType: data.type,
+            budget: data.budget,
+            timeline: data.timeline,
+            referral: data.referral,
+            message: data.message,
+          },
+        },
+      });
+
+      // Confirmation to the client
+      await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "inquiry-confirmation",
+          recipientEmail: data.email,
+          idempotencyKey: `inquiry-confirm-${id}`,
+          templateData: { name: data.name },
+        },
+      });
+
+      form.reset();
       toast.success("Inquiry received. We will respond personally within two business days.");
-    }, 700);
+    } catch (err) {
+      console.error(err);
+      toast.error("We could not submit your inquiry. Please try again or email studio@latorreinteriors.com.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const inputCls =
