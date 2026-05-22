@@ -1,5 +1,5 @@
 import { useReveal } from "@/hooks/use-reveal";
-import portrait from "@/assets/project-rrg-living.jpg";
+import portrait from "@/assets/portfolio-01.jpg";
 
 const About = () => {
   const ref = useReveal<HTMLDivElement>();
@@ -10,12 +10,13 @@ const About = () => {
           <div className="img-zoom aspect-[4/5] w-full">
             <img
               src={portrait}
-              alt="Editorial interior — a living room composition by Latorre Interiors"
+              alt="Editorial interior — bespoke joinery and a refined pantry composition by Latorre Interiors"
               className="h-full w-full object-cover"
+              style={{ objectPosition: "center center" }}
               loading="lazy"
             />
           </div>
-          <p className="mt-4 text-xs text-muted-foreground tracking-wider">— Residence RRG, Living</p>
+          <p className="mt-4 text-xs text-muted-foreground tracking-wider">— Private Residence, Pantry &amp; Joinery</p>
         </div>
 
         <div className="lg:col-span-7 lg:pt-8">

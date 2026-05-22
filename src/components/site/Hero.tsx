@@ -1,16 +1,17 @@
-import heroImage from "@/assets/project-plaza-living.jpg";
+import heroImage from "@/assets/portfolio-05.jpg";
 
 const Hero = () => {
   return (
     <section id="top" className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
       <img
         src={heroImage}
-        alt="Latorre Interiors signature residence — modern architecture with pool and floor-to-ceiling glass"
-        className="absolute inset-0 h-full w-full object-cover scale-[1.02]"
+        alt="Latorre Interiors signature project — contemporary architectural facade at dusk"
+        className="absolute inset-0 h-full w-full object-cover"
+        style={{ objectPosition: "center 60%" }}
         loading="eager"
         fetchPriority="high"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-ink/10 to-ink/55" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/15 via-ink/5 to-ink/45" />
 
       <div className="relative z-10 h-full container-editorial flex flex-col justify-end pb-16 md:pb-24 text-accent">
         <div className="max-w-4xl">
