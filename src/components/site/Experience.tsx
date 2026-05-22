@@ -1,5 +1,5 @@
 import { useReveal } from "@/hooks/use-reveal";
-import experienceImage from "@/assets/project-cj-outdoor.jpg";
+import experienceImage from "@/assets/portfolio-23.jpg";
 
 const points = [
   {

@@ -1,19 +1,21 @@
 import { useReveal } from "@/hooks/use-reveal";
 
-import plazaLiving from "@/assets/project-plaza-living.jpg";
-import plazaKitchen from "@/assets/project-plaza-kitchen-2.jpg";
-import plazaExterior from "@/assets/project-plaza-exterior.jpg";
+import f01Main from "@/assets/portfolio-22.jpg";
+import f01a from "@/assets/portfolio-11.jpg";
+import f01b from "@/assets/portfolio-13.jpg";
+import f01c from "@/assets/portfolio-29.jpg";
 
-import rrgLiving from "@/assets/project-rrg-living.jpg";
-import rrDining from "@/assets/project-rr-dining.jpg";
-import liviaBedroom from "@/assets/project-livia-bedroom.jpg";
+import f02Main from "@/assets/portfolio-17.jpg";
+import f02a from "@/assets/portfolio-19.jpg";
+import f02b from "@/assets/portfolio-12.jpg";
 
-import cjDining from "@/assets/project-cj-dining.jpg";
-import cjOutdoor from "@/assets/project-cj-outdoor.jpg";
+import f03Main from "@/assets/portfolio-27.jpg";
+import f03a from "@/assets/portfolio-09.jpg";
 
-import terras2Pool from "@/assets/project-tsj2-pool.jpg";
-import terras1Patio from "@/assets/project-terras-1-patio.jpg";
-import staircase from "@/assets/project-living-staircase.jpg";
+import sel1 from "@/assets/portfolio-28.jpg";
+import sel2 from "@/assets/portfolio-21.jpg";
+import sel3 from "@/assets/portfolio-15.jpg";
+import sel4 from "@/assets/portfolio-25.jpg";
 
 type Featured = {
   index: string;
@@ -32,7 +34,7 @@ const featured: Featured[] = [
     category: "Contemporary Villa · Architecture & Interiors",
     concept:
       "Conceived as a single horizontal gesture, the residence opens entirely toward the garden through a measured rhythm of glass and white volumes. Inside, oak millwork, travertine and warm linen are layered to soften the architecture — a calm, sunlit home shaped around an entertaining family that lives between the pool, the kitchen and the open living room.",
-    images: [plazaLiving, rrgLiving, plazaKitchen, plazaExterior],
+    images: [f01Main, f01a, f01b, f01c],
   },
   {
     index: "Featured 02",
@@ -40,8 +42,8 @@ const featured: Featured[] = [
     location: "São Paulo, Brazil",
     category: "Private Residence · Interior Design",
     concept:
-      "An interior tuned to slow evenings and long dinners. A custom dining table anchors the home beneath a sculptural pendant, framed by mirrored verticals that lengthen the room. Smoked timber, brushed metal and tonal upholstery hold the composition — refined, residential, quietly theatrical.",
-    images: [rrDining, rrgLiving, liviaBedroom],
+      "An interior tuned to slow evenings and long dinners. A sculptural bar anchors the home beneath warm pendants, framed by joinery that lengthens the room. Smoked timber, brushed metal and tonal upholstery hold the composition — refined, residential, quietly theatrical.",
+    images: [f02Main, f02a, f02b],
   },
   {
     index: "Featured 03",
@@ -49,8 +51,8 @@ const featured: Featured[] = [
     location: "São Paulo, Brazil",
     category: "Private Residence · Interior Architecture",
     concept:
-      "Floor-to-ceiling glazing dissolves the boundary between the dining pavilion and the garden, treating landscape as the principal material. Pale stone, warm timber and a restrained neutral palette compose an interior built for unhurried hosting — a home where every threshold has been considered.",
-    images: [cjDining, cjOutdoor],
+      "Floor-to-ceiling glazing dissolves the boundary between the pavilion and the garden, treating landscape as the principal material. Warm timber, soft light and a restrained neutral palette compose an interior built for unhurried hosting — a home where every threshold has been considered.",
+    images: [f03Main, f03a],
   },
 ];
 
@@ -69,31 +71,31 @@ const selected: Selected[] = [
     category: "Contemporary Villa",
     description:
       "Stone, water and a low pavilion drawn into the topography — a quiet architecture of horizontal lines and soft transitions.",
-    image: terras2Pool,
+    image: sel1,
   },
   {
     name: "Garden Terrace Residence",
     location: "São Paulo, Brazil",
     category: "Private Residence",
     description:
-      "An outdoor lounge composed around a single fire — concrete, timber and lush planting brought into close conversation.",
-    image: terras1Patio,
+      "A refined vanity composition in muted sage — marble, brass and considered joinery brought into close conversation.",
+    image: sel2,
   },
   {
     name: "Suite Lívia",
     location: "São Paulo, Brazil",
     category: "Interior Design · Private Suite",
     description:
-      "A young occupant&rsquo;s suite resolved as a refined, lasting room — built-in shelving, a window seat, soft tonal layering.",
-    image: liviaBedroom,
+      "A young occupant&rsquo;s suite resolved as a refined, lasting room — built-in joinery, layered lighting and a soft tonal palette.",
+    image: sel3,
   },
   {
     name: "Atrium Residence",
     location: "São Paulo, Brazil",
     category: "Interior Architecture",
     description:
-      "A bright entry hall ordered by a single sculptural staircase and a measured composition of art, light and white surface.",
-    image: staircase,
+      "A serene powder room ordered by warm stone, soft timber and a measured composition of light and surface.",
+    image: sel4,
   },
 ];
 
